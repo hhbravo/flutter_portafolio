@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:grocery_store/grocery_product.dart';
+import 'package:portafolio_flutter/grocery_product.dart';
 
 enum GroceryState { normal, details, cart }
 

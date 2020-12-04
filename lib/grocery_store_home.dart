@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_store/grocery_provider.dart';
-import 'package:grocery_store/grocery_store_block.dart';
-import 'package:grocery_store/grocery_store_list.dart';
+import 'package:portafolio_flutter/grocery_provider.dart';
+import 'package:portafolio_flutter/grocery_store_block.dart';
+import 'package:portafolio_flutter/grocery_store_list.dart';
 
 const _backgroundColor = Color(0XFFF6F5F2);
 const cartBarHeigth = 100.0;
