@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:portafolio_flutter/pokemon/pokemon_home.dart';
 import 'package:portafolio_flutter/yakufarma/yakufarma_home.dart';
 import 'package:portafolio_flutter/backdrop/backdrop_example.dart';
 
@@ -50,6 +51,13 @@ class MyHomePage extends StatelessWidget {
             onPressed: () => _onPressed(
               context,
               YakufarmaHomePrincipal(),
+            ),
+          ),
+          RaisedButton(
+            child: Text('Poke App'),
+            onPressed: () => _onPressed(
+              context,
+              PokemonHome(),
             ),
           ),
         ],
