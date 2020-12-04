@@ -82,40 +82,86 @@ class PokemonHome extends StatelessWidget {
               ),
               Container(
                 height: 210,
-                margin: EdgeInsets.only(top: 15, left: 20),
+                margin: EdgeInsets.only(top: 15, left: 10),
                 //color: Colors.red[100],
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
                   children: [
-                    PokeItem('Greninja', 4.0),
+                    PokePop('Greninja', 4.0),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    PokePop('Greninja', 4.0),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    PokePop('Greninja', 4.0),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    PokePop('Greninja', 4.0),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    PokePop('Greninja', 4.0),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    PokePop('Greninja', 4.0),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    PokePop('Greninja', 4.0),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    PokePop('Greninja', 4.0),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(top: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(left: 30),
+                      child: Text(
+                        'Plush Toys!',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 35),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(right: 20),
+                      child: Text(
+                        'See all',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.black.withOpacity(.5)),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: 30,
+                  left: 10,
+                  bottom: 30,
+                ),
+                child: Row(
+                  children: [
+                    PokePlush(),
                     SizedBox(
                       width: 10,
                     ),
-                    PokeItem('Greninja', 4.0),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    PokeItem('Greninja', 4.0),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    PokeItem('Greninja', 4.0),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    PokeItem('Greninja', 4.0),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    PokeItem('Greninja', 4.0),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    PokeItem('Greninja', 4.0),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    PokeItem('Greninja', 4.0),
+                    PokePlush(),
                   ],
                 ),
               )
@@ -127,7 +173,67 @@ class PokemonHome extends StatelessWidget {
   }
 }
 
-Widget PokeItem(String name, double scale) {
+Widget PokePlush() {
+  return Stack(overflow: Overflow.visible, children: [
+    Container(
+      width: 170,
+      height: 120,
+      decoration: BoxDecoration(
+        color: Colors.yellow.withOpacity(.5),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(40.0),
+          bottomRight: Radius.circular(40.0),
+          topLeft: Radius.circular(20.0),
+          topRight: Radius.circular(20.0),
+        ),
+      ),
+    ),
+    Positioned(
+      bottom: 1,
+      left: 30,
+      child: Container(
+          child: Image.asset(
+        'assets/rowletplush.png',
+        scale: 4.0,
+        //fit: BoxFit.contain,
+      )),
+    ),
+    Positioned(
+      top: 80,
+      child: Container(
+        width: 170,
+        height: 40,
+        //color: Colors.red.withOpacity(.5),
+        decoration: BoxDecoration(
+            color: Colors.amberAccent,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(40.0),
+              bottomRight: Radius.circular(40.0),
+              topLeft: Radius.circular(20.0),
+              topRight: Radius.circular(20.0),
+            )),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('poke',
+                  style: TextStyle(
+                    color: Colors.white,
+                  )),
+              Text('S/ 30.00',
+                  style: TextStyle(
+                    color: Colors.white,
+                  )),
+            ],
+          ),
+        ),
+      ),
+    )
+  ]);
+}
+
+Widget PokePop(String name, double scale) {
   return Container(
     width: 170,
     height: 210,
@@ -139,10 +245,14 @@ Widget PokeItem(String name, double scale) {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
+            padding: EdgeInsets.only(
+              left: 8,
+              right: 8,
+            ),
             child: Image.network(
-          'https://cdn.traction.one/pokedex/pokemon/658.png',
-          scale: scale,
-        )),
+              'https://cdn.traction.one/pokedex/pokemon/658.png',
+              scale: scale,
+            )),
         Container(
           height: 40,
           width: 170,
